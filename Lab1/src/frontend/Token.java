@@ -62,7 +62,7 @@ public final class Token {
 	private final Type type;
 	private final int line, column;
 	private final String lexeme;
-	
+  	
 	public Token(Type type, int line, int column, String lexeme) {
 		assert type != null;
 		assert line >= 0;

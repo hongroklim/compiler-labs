@@ -54,7 +54,7 @@ public class LexerTests {
 				new Token(WHILE, 0, 20, "while"),
 				new Token(EOF, 0, 25, ""));
 	}
-
+  
 	@Test
 	public void testStringLiteralWithDoubleQuote() {
 		runtest("\"\"\"",
@@ -70,5 +70,19 @@ public class LexerTests {
 				new Token(EOF, 0, 4, ""));
 	}
 
+  /** Custom unit test */
+  @Test(expected = AssertionError.class)
+  public void testBrokenKWs() {
+    runtest("Module",
+        new Token(MODULE, 0, 0, "module"),
+        new Token(EOF, 0, 6, ""));
+  }
 
+  @Test
+  public void testModuleDef() {
+    runtest("module average",
+        new Token(MODULE, 0, 0, "module"),
+        new Token(ID, 0, 7, "average"),
+        new Token(EOF, 0, 14, ""));
+  }
 }
