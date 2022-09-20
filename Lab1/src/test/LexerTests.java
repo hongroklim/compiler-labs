@@ -14,8 +14,9 @@ import frontend.Token.Type;
 import static frontend.Token.Type.*;
 
 /**
- * This class contains unit tests for your lexer. Currently, there is only one test, but you
- * are strongly encouraged to write your own tests.
+ * This class contains unit tests for your lexer.
+ * Currently, there is only one test, but you are strongly encouraged to write
+ * your own tests.
  */
 public class LexerTests {
 	// helper method to run tests; no need to change this

@@ -9,6 +9,10 @@
 
 implement a lexical analyser for a simple programming language called PL/3007.
 
+### [Lab2](./Lab2)
+
+implement a parser for PL/3007.
+
 ## Usage
 
 **Build**

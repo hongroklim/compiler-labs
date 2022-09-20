@@ -28,6 +28,7 @@ import static frontend.Token.Type.*;
 %}
 
 /* This definition may come in handy. If you wish, you can add more definitions here. */
+/* WhiteSpace: blank, tab, newline, return */
 WhiteSpace = [ ] | \t | \f | \n | \r
 Digit = [0-9]
 Alpha = [a-zA-Z]
@@ -36,6 +37,7 @@ StringLiteral = \" [^\"\n]* \"
 
 %%
 
+/* Keywords (14) */
 "boolean" { return token(BOOLEAN); }
 "break" { return token(BREAK); }
 "else" { return token(ELSE); }
@@ -51,6 +53,7 @@ StringLiteral = \" [^\"\n]* \"
 "void" { return token(VOID); }
 "while" { return token(WHILE); }
 
+/* Punctuation Symbols (8) */
 "," { return token(COMMA); }
 "[" { return token(LBRACKET); }
 "{" { return token(LCURLY); }
@@ -60,6 +63,7 @@ StringLiteral = \" [^\"\n]* \"
 ")" { return token(RPAREN); }
 ";" { return token(SEMICOLON); }
 
+/* Oeprators (11) */
 "/" { return token(DIV); }
 "==" { return token(EQEQ); }
 "=" { return token(EQL); }
@@ -81,11 +85,19 @@ StringLiteral = \" [^\"\n]* \"
 
 /**
  * Integer literals consist of a sequence of one or more decimal digits.
-  * Note
- * that integer literals are unsigned: positive or negative sign are
- * considered to be unary operators. Also note that superfluous leading zeros
- * are allowed. */
+ * Note that integer literals are unsigned: positive or negative sign are
+ * considered to be unary operators.
+ * Also note that superfluous leading zeros are allowed.
+ */
 {Digit}+ { return token(INT_LITERAL); }
+
+/**
+ * String literals in PL/3007 are enclosed by double quotes,
+ * and may contain zero or more characters
+ * (except the double quote and the newline character).
+ *
+ * StringLiteral = \" [^\"\n]* \"
+ */
 {StringLiteral} { return token(STRING_LITERAL); }
 
 {WhiteSpace} { }
