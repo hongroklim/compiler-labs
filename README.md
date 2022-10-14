@@ -5,13 +5,9 @@
 
 ## Labs
 
-### [Lab1](./Lab1)
-
-implement a lexical analyser for a simple programming language called PL/3007.
-
-### [Lab2](./Lab2)
-
-implement a parser for PL/3007.
+* [Lab1](./Lab1): implement lexical analyser
+* [Lab2](./Lab2): implement parser for PL/3007
+* [Lab3](./Lab3): understand semantic analyser
 
 ## Usage
 
