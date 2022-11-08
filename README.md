@@ -6,18 +6,12 @@
 ## Labs
 
 * [Lab1](./Lab1): implement lexical analyser
-* [Lab2](./Lab2): implement parser for PL/3007
+* [Lab2](./Lab2): implement parser
 * [Lab3](./Lab3): understand semantic analyser
+* [Lab4](./Lab4): implement code generator
 
-## Usage
-
-**Build**
+## Build
 
 ```sh
 $ ant
 ```
-
-**Unit Test**
-
-* test class: `<leader>jt`
-* test nearest method: `<leader>jn`
